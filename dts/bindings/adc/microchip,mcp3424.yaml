@@ -1,0 +1,15 @@
+
+description: MCP3424 4-channel I2C ADC
+
+
+
+include: [adc-controller.yaml, i2c-device.yaml]
+
+properties:
+    "#io-channel-cells":
+      const: 1
+
+io-channel-cells:
+    - channel
+
+compatible: "microchip,mcp3424"

@@ -1,0 +1,11 @@
+
+config SW_DCMI
+    bool "enable SW_DCMI interface driver"
+
+if SW_DCMI
+
+module = SW_DCMI
+module-str = sw_dcmi
+source "subsys/logging/Kconfig.template.log_config"
+
+endif

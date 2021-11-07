@@ -1,0 +1,27 @@
+
+# MCP3424 I2C ADC configuation options
+
+config ADC_MCP3424
+    bool "MCP3424 driver"
+    depends on I2C
+
+#if ADC_MCP3424
+
+config ADC_MCP3424_INIT_PRIORITY
+	int "Init priority"
+	default 80
+	help
+	  MCP3424 ADC device driver initialization priority.
+
+config ADC_MCP3424_ACQUISITION_THREAD_STACK_SIZE
+	int "stack size"
+	default 512
+	help
+		Size of the stack used for data acquisition thread.
+
+config ADC_MCP3424_ACQUISITION_THREAD_PRIO
+	int "acquisition thread priority"
+	default 0
+	help
+		Data acquisition thread priority
+#endif # ADC_MCP320X

@@ -1,0 +1,34 @@
+
+
+description: |
+    Hardware configuration/pin assignments for an stm32 dcmi-like interface for parallel cameras
+
+
+compatible: "sw-dcmi"
+
+include: base.yaml
+
+properties:
+    pclk_io:
+      required: true
+      type: phandle-array
+    href_io:
+      required: true
+      type: phandle-array
+    vsync_io:
+      required: true
+      type: phandle-array
+    data_port:
+      required: true
+      type: phandle-array
+      description: |
+            phandle for the desired GPIO port and either the upper or lower portion of the port
+            all pins must be 8 sequential pins in the chosen GPIO port
+            e.g. <&gpiob 0> means the lower 8 bits of GPIOB (<&gpiob 1> would be bits 8-15)
+    pwdn_io:
+      required: true
+      type: phandle-array
+    rst_io:
+      required: true
+      type: phandle-array
+      

@@ -1,0 +1,17 @@
+
+config SPI_CAM
+    bool "enable Arducam Mini SPI camera driver"
+
+if SPI_CAM
+
+config ARDUCAM_SPI_INIT_PRIORITY
+	int "Init priority"
+	default 80
+	help
+	  Arducam SPI camera device driver initialization priority.
+
+module = SPI_CAM
+module-str = spi_cam
+source "subsys/logging/Kconfig.template.log_config"
+
+endif

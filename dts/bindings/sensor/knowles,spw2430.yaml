@@ -1,0 +1,12 @@
+
+description: SPW2430 MEMS microphone
+
+compatible: "knowles,spw2430"
+
+properties:
+  label:
+    type: string
+    required: true
+  io-channels:
+    type: phandle-array
+    required: true

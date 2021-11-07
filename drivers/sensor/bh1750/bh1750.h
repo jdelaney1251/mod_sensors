@@ -1,0 +1,55 @@
+#ifndef MOD_SENSORS_DRIVERS_SENSOR_BH1750_H_
+#define MOD_SENSORS_DRIVERS_SENSOR_BH1750_H_
+
+#include <zephyr/types.h>
+#include <device.h>
+#include <devicetree.h>
+#include <drivers/i2c.h>
+
+#define DT_DRV_COMPAT rohm_bh1750
+
+#define BH1750_I2C_ADDRESS              DT_INST_REG_ADDR(0)
+
+#define BH1750_CMD_PWR_DN               0x00
+#define BH1750_CMD_PWR_ON               0x01
+#define BH1750_CMD_RESET                0x07
+#define BH1750_CMD_CONT_H_RES_MODE      0x10
+#define BH1750_CMD_CONT_H_RES_MODE2     0x11
+#define BH1750_CMD_CONT_L_RES_MODE      0x13
+#define BH1750_CMD_ONE_TIME_H_RES_MODE  0x20
+#define BH1750_CMD_ONE_TIME_H_RES_MODE2 0x21
+#define BH1750_CMD_ONE_TIME_L_RES_MODE  0x23
+#define BH1750_CMD_CHNG_MEAS_TIME_HI    0x40
+#define BH1750_CMD_CHNG_MEAS_TIME_LOW   0x60
+
+#define BH1750_MODE_CONT                0x10
+#define BH1750_MODE_SINGLE              0x20 
+
+#define BH1750_MEAS_H_RES_MODE          0x00
+#define BH1750_MEAS_H_RES_MODE2         0x01
+#define BH1750_MEAS_L_RES_MODE          0x03
+
+#if defined CONFIG_BH1750_MODE_CONT
+#define BH1750_MODE BH1750_MODE_CONT
+#elif defined CONFIG_BH170_MODE_SINGLE
+#define BH1750_MODE BH1750_MODE_SINGLE
+#else
+#define BH1750_MODE BH1750_MODE_SINGLE
+#endif
+
+#if defined CONFIG_BH1750_0_5lx_RES
+#define BH1750_MEAS_RES BH1750_MEAS_H_RES_MODE2
+#define BH1750_MEAS_WAIT_TIME_MS 180
+#elif defined CONFIG_BH1750_1lx_RES
+#define BH1750_MEAS_RES BH1750_MEAS_H_RES_MODE
+#define BH1750_MEAS_WAIT_TIME_MS 180
+#elif defined CONFIG_BH1750_4lx_RES
+#define BH1750_MEAS_RES BH1750_MEAS_L_RES_MODE
+#define BH1750_MEAS_WAIT_TIME_MS 24
+#else
+#define BH1750_MEAS_RES BH1750_MEAS_H_RES_MODE2
+#define BH1750_MEAS_WAIT_TIME_MS 180
+#endif
+
+
+#endif

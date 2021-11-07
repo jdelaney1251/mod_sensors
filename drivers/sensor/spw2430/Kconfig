@@ -1,0 +1,8 @@
+# Copyright (c) 2019 Nordic Semiconductor
+# SPDX-License-Identifier: Apache-2.0
+
+config SPW2430
+	bool "Enable support for the demonstration out of tree driver"
+
+
+	

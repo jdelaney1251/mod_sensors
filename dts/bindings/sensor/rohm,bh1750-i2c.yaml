@@ -1,0 +1,6 @@
+
+description: BH1750 light sensor
+
+compatible: "rohm,bh1750"
+
+include: i2c-device.yaml

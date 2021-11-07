@@ -1,0 +1,8 @@
+description: |
+    Hardware configuration/pin assignments for an stm32 dcmi-like interface for parallel cameras
+
+
+compatible: "arducam,spi-cam"
+
+include: spi-device.yaml
+

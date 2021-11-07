@@ -1,0 +1,21 @@
+# Copyright (c) 2019 Nordic Semiconductor
+# SPDX-License-Identifier: Apache-2.0
+
+config BH1750
+	bool "Enable support for the demonstration out of tree driver"
+
+config BH1750_MODE_CONT
+	bool "continuous measurement mode"
+
+config BH1750_MODE_SINGLE
+	bool "single measurement mode"	
+
+config BH1750_0_5lx_RES
+	bool "0.5lx resolution measurements"
+
+config BH1750_1lx_RES
+	bool "1lx resolution measurements"
+	
+config BH1750_4lx_RES
+	bool "4lx resolution measurements"
+	
