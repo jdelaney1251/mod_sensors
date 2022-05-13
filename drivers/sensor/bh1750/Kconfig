@@ -2,7 +2,7 @@
 # SPDX-License-Identifier: Apache-2.0
 
 config BH1750
-	bool "Enable support for the demonstration out of tree driver"
+	bool "Enable support for the BH1750 driver"
 
 config BH1750_MODE_CONT
 	bool "continuous measurement mode"
